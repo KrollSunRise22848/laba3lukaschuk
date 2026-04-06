@@ -27,6 +27,7 @@ jobs:
 
       - name: Run tests with coverage
         run: |
+          export PYTHONPATH="${{ github.workspace }}:$PYTHONPATH"
           pytest --cov=app --cov-report=term-missing --cov-report=xml:coverage.xml tests/
           exit 0
 
